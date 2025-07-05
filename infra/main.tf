@@ -19,8 +19,9 @@ resource "aws_security_group" "allow_http" {
 
 resource "aws_instance" "contact_api" {
   ami                    = var.ami_id  # ✅ Your selected AMI
-  instance_type          = "t2.micro"
-  user_data              = file("${path.module}/../init.sh")
+  instance_type          = var.instance_type
+  key_name               = var.key_name
+  user_data              = file("${path.module}/init.sh")
   vpc_security_group_ids = [aws_security_group.allow_http.id]
 
   tags = {

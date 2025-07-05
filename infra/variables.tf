@@ -1,4 +1,11 @@
+variable "instance_type" {
+  default = "t2.micro"
+}
+
 variable "ami_id" {
-  description = "AMI to launch"
-  default     = "ami-05ffe3c48a9991133"  # Your latest ID
+  default = "ami-05ffe3c48a9991133"
+}
+
+variable "key_name" {
+  default = "N-VARGINIA"  # Your EC2 Key Pair name
 }
