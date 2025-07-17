@@ -1,1 +1,10 @@
+# Sensitive key
 *.pem
+
+# Terraform state
+terraform.tfstate*
+.terraform/
+
+# Python cache (if Flask used locally)
+__pycache__/
+*.pyc
