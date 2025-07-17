@@ -19,3 +19,7 @@ CMD ["python", "app.py"]
 # curl -X POST http://localhost:5000/contacts \
 #     -H "Content-Type: application/json" \
 #     -d '{"name": "Samir", "email": "samir@example.com", "phone": "1234567890"}'
+
+#  mkdir -p ~/.ssh (Check it exist in docker_vm)
+#  mv ~/contact-book-api/n-varginia.pem ~/.ssh/n-varginia.pem
+#  chmod 400 ~/.ssh/n-varginia.pem (Permission to execute)
