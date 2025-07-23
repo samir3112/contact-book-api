@@ -3,7 +3,7 @@ variable "aws_region" {
 }
 
 variable "availability_zone" {
-  default = "us-east-1a"
+  default = ["us-east-1a","us-east-1b"]
 }
 
 variable "ami_id" {
@@ -17,3 +17,4 @@ variable "instance_type" {
 variable "key_name" {
   default = "n-varginia"
 }
+
