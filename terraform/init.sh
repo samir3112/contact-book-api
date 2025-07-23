@@ -5,13 +5,17 @@ systemctl start docker
 systemctl enable docker
 usermod -aG docker ec2-user
 
+# Pull image
 docker pull samir3112/contact-api
+
+# Run with ENV variables for DB connection
 docker run -d -p 80:5000 \
   -e DB_USER=admin \
   -e DB_PASS=password123 \
   -e DB_HOST=${db_endpoint} \
   -e DB_NAME=contactdb \
   samir3112/contact-api
+
 
 
 
