@@ -5,17 +5,14 @@ systemctl start docker
 systemctl enable docker
 usermod -aG docker ec2-user
 
-# Wait briefly to ensure docker group change applies
-sleep 5
-
-# Run docker using sudo (safe fallback, even if group not yet active)
-sudo docker pull samir3112/contact-api
-sudo docker run -d -p 80:5000 \
+docker pull samir3112/contact-api
+docker run -d -p 80:5000 \
   -e DB_USER=admin \
   -e DB_PASS=password123 \
   -e DB_HOST=${db_endpoint} \
   -e DB_NAME=contactdb \
   samir3112/contact-api
+
 
 
 # terraform init  # terraform plan  # terraform apply -auto-approve  # terraform output
