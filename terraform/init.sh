@@ -4,13 +4,19 @@ yum install -y docker
 systemctl start docker
 systemctl enable docker
 usermod -aG docker ec2-user
-docker pull samir3112/contact-api
-docker run -d -p 80:5000 \
+
+# Wait briefly to ensure docker group change applies
+sleep 5
+
+# Run docker using sudo (safe fallback, even if group not yet active)
+sudo docker pull samir3112/contact-api
+sudo docker run -d -p 80:5000 \
   -e DB_USER=admin \
   -e DB_PASS=password123 \
   -e DB_HOST=${db_endpoint} \
   -e DB_NAME=contactdb \
   samir3112/contact-api
+
 
 # terraform init  # terraform plan  # terraform apply -auto-approve  # terraform output
 # chmod 400 ~/n-varginia.pem
@@ -19,3 +25,10 @@ docker run -d -p 80:5000 \
 # curl http://<public-ip> and curl http://<public-ip>/contacts
 # http://54.165.213.187  and http://54.165.213.187/contacts (Access via browser)
 
+# sudo yum install -y mariadb105
+#  mysql -h <rds_endpoint> -u admin -p
+# SHOW DATABASES
+# USE contactdb;
+# SHOW TABLES;
+
+# # curl -X POST http://localhost:5000/contacts -H "Content-Type: application/json" -d '{"name": "Samir", "email": "samir@example.com", "phone": "1234567890"}'
