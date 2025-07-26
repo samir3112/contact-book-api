@@ -12,6 +12,7 @@ EXPOSE 5000
 CMD ["python", "app.py"]
 
 
+
 # docker build -t contact-api .
 # docker run -d -p 5000:5000 contact-api
 # docker tag contact-api samir3112/contact-api:latest (for 1st time)

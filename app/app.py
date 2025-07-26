@@ -21,7 +21,7 @@ class Contact(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80))
     email = db.Column(db.String(120))
-    phone = db.Column(db.String(20))
+    phone = db.Column(db.String(15))
 
 # Routes
 @app.route('/')
@@ -68,5 +68,6 @@ def delete_contact(id):
     return jsonify({"message": "Deleted"}), 204
 
 if __name__ == '__main__':
+    with app.app_context():
+        db.create_all()
     app.run(debug=True, host="0.0.0.0")
-
