@@ -30,7 +30,7 @@ docker run -d -p 80:5000 \
 # curl http://<public-ip> and curl http://<public-ip>/contacts
 # http://54.165.213.187  and http://54.227.202.108/contacts (Access via browser)
 
-# sudo yum install -y mariadb105
+# sudo yum install -y mariadb105  OR   1) sudo apt update  2) sudo apt install mysql-client -y
 #  mysql -h <rds_endpoint> -u admin -p
 # SHOW DATABASES
 # USE contactdb;
@@ -39,4 +39,10 @@ docker run -d -p 80:5000 \
 
 #  curl -X POST http://localhost/contacts -H "Content-Type: application/json" -d '{"name": "Samir", "email": "samir@example.com", "phone": "1234567890"}'
 #  curl -X PUT http://localhost/contacts/1 -H "Content-Type: application/json" -d '{"name": "Samir", "email": "samirparate@gmail.com", "phone": "8999419811"}'
+
+# NEW METHOD
+# terraform apply -auto-approve
+# chmod +x update-github-secrets.sh ( For first time )
+# ./update-github-secrets.sh
+# git add .      git commit -m "My changes for Day 4/5"    git push origin main
 
