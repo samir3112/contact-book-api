@@ -125,22 +125,31 @@ No manual login needed!
 
 ## 🖼️ Screenshots
 
-> Upload below screenshots to `/screenshots` folder:
 
 * ✅ App running on EC2
+
 ![EC2](./screenshots/ec2.png)
 
+
 * ✅ API call from Postman
+
 ![Postman](./screenshots/postman.png)
 
+
 * ✅ API call from curl
+
 ![Curl](./screenshots/curl.png)
 
+
 * ✅ RDS data in MySQL CLI
+
 ![MYSQL CLI](./screenshots/rds.png)
 
+
 * ✅ GitHub Actions workflow
+
 ![CI](./screenshots/ci.png)
+
 
 ![CD](./screenshots/cd.png)
 ---
