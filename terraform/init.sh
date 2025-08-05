@@ -37,7 +37,7 @@ docker run -d -p 80:5000 \
 # SHOW TABLES;
 # SELECT * FROM contact;
 
-#  curl -X POST http://localhost/contacts -H "Content-Type: application/json" -d '{"name": "Samir", "email": "samir@example.com", "phone": "1234567890"}'
+#  curl -X POST http://localhost/contacts -H "Content-Type: application/json" -d '{"name": "Samir", "email": "samirparate@gmail.com", "phone": "8999419811"}'
 #  curl -X PUT http://localhost/contacts/1 -H "Content-Type: application/json" -d '{"name": "Samir", "email": "samirparate@gmail.com", "phone": "8999419811"}'
 
 # NEW METHOD
